@@ -9,7 +9,7 @@ export default function Footer() {
 
         {/* Column 1: Logo & Social Media */}
         <div className="footer-column">
-          <a href="https://uandi.org" target="_blank" rel="noopener noreferrer">
+          <a href="https://uandi.org.in" target="_blank" rel="noopener noreferrer">
             <img src="/assets/Footer/uandi_logo_BW.png" alt="U&I Trust Logo" className="footer-logo" />
           </a>
           <div className="footer-social">
