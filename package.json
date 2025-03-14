@@ -19,7 +19,8 @@
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.2.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yocto-queue": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
