@@ -1,0 +1,262 @@
+/* Impact Stories Section */
+.impact-section {
+    text-align: center;
+    padding: 0;
+    background-color: #2d2d2d;
+    width: 100vw;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Heading */
+.impact-heading {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    color: black;
+    background-color: #ff3b6d;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Bento Grid Layout */
+/* Bento Grid Layout - Reduce Width */
+.impact-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 25vw);
+    /* 3 equal columns */
+    grid-template-rows: repeat(3, auto);
+    gap: 1rem;
+    margin: 0 auto;
+    /* Center the grid */
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+/* Bento Box Items */
+.impact-bento-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover Effect */
+.impact-bento-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Different Bento Sizes */
+.impact-bento-item:nth-child(1) {
+    grid-column: span 2;
+    /* Large horizontal box */
+    grid-row: span 1;
+}
+
+.impact-bento-item:nth-child(2) {
+    grid-column: span 1;
+    grid-row: span 1;
+    /* Tall vertical box */
+}
+
+.impact-bento-item:nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.impact-bento-item:nth-child(4) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.impact-bento-item:nth-child(5) {
+    grid-column: span 3;
+    /* Another large horizontal box */
+    grid-row: span 1;
+}
+
+/* Student Image */
+.student-image {
+    width: auto;
+    height: 30vh;
+    object-fit: cover;
+    border-radius: 0;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.story-heading {
+    margin: 0;
+    font-size: 30px;
+}
+
+.story-heading-1 {
+    font-size: 30px;
+    position: relative;
+    bottom: 50%;
+    right: 10%;
+}
+
+.student-image-1 {
+    top: 21%;
+    left: 30%;
+    height: 35vh;
+}
+
+.story-heading-2 {
+    position: relative;
+    bottom: 70%;
+    right: 0%;
+}
+
+.student-image-2 {
+    top: 27.5%;
+    left: 0%;
+}
+
+.story-heading-3 {
+    position: relative;
+    bottom: 70%;
+    right: 0%;
+}
+
+.student-image-3 {
+    top: 27.5%;
+    left: 0%;
+}
+
+.story-heading-4 {
+    position: relative;
+    bottom: 50%;
+    right: 10%;
+}
+
+.student-image-4 {
+    top: 21%;
+    left: 30%;
+    height: 35vh;
+}
+
+.story-heading-5 {
+    position: relative;
+    bottom: 50%;
+    right: 10%;
+}
+
+.student-image-5 {
+    top: 21%;
+    left: 20%;
+    height: 35vh;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .impact-bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .impact-bento-item:nth-child(1),
+    .impact-bento-item:nth-child(5) {
+        grid-column: span 2;
+        /* Full width on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .impact-bento-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .impact-bento-item {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+/* Modal - Centered & Visible */
+.expanded-story-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 90vh;
+    max-width: 80vw;
+    min-width: 30vw;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    /* Initially hidden */
+    flex-direction: column;
+    align-items: center;
+    z-index: 1001;
+    overflow-y: scroll;
+}
+
+/* Show Modal */
+.expanded-story-modal.show {
+    display: flex;
+}
+
+/* Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+/* Show Overlay */
+.modal-overlay.show {
+    display: block;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Modal Image */
+.expanded-image-impact {
+    width: auto;
+    height: 25vh;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+    .expanded-story-modal {
+        width: 80vw;
+    }
+}
+
+.expanded-content {
+    scroll-behavior: smooth;
+    white-space: pre-line;
+}

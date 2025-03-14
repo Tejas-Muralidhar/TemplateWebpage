@@ -1,0 +1,164 @@
+/* Navbar container */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    z-index: 50;
+    height: 100px; /* Set a fixed height for the navbar */
+  }
+  
+  /* Flex container for content */
+  .navbar .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo and Lakshya container */
+  .navbar .logo-container {
+    display: flex;
+    align-items: center; /* Aligns the logo and text vertically */
+    gap: 0.5rem; /* Adds some space between the logo and the text */
+  }
+  
+  /* Logo styling */
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffda1b; /* Blue-600 */
+  }
+  
+  #LakshyaLogo{
+    margin-left: 15px;
+  }
+
+  /* Desktop Navigation (Flex applied) */
+  .navbar .desktop-nav {
+    display: none;
+  }
+  
+
+  @media (min-width: 768px) {
+    .navbar .desktop-nav {
+      display: flex;
+      gap: 2rem;
+      font-size: 1.125rem;
+      font-weight: 500;
+      align-items: center;
+    }
+  }
+  
+  .navbar .desktop-nav li {
+    list-style: none;
+  }
+  
+  .navbar .desktop-nav li .scroll-link {
+    cursor: pointer;
+    color: #000000; /* Blue-500 */
+    transition: color 0.3s ease;
+  }
+  
+  /* Sign Up Button */
+  .navbar .signup-btn {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .navbar .signup-btn {
+      display: block;
+      background-color: #2563eb; /* Blue-500 */
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    .navbar .signup-btn:hover {
+      background-color: #1d4ed8; /* Blue-600 */
+    }
+  }
+  
+  /* Add padding to the first element after navbar */
+  body {
+    padding-top: 100px; /* Same as navbar height */
+  }
+
+/* Default state: Black */
+.navbar .desktop-nav li .scroll-link {
+  cursor: pointer !important;
+  color: black; /* Default color */
+  font-weight: normal;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+  text-decoration: none;
+}
+
+/* Hover state: Yellow */
+.navbar .desktop-nav li .scroll-link:hover {
+  color: #ffda1b; /* Yellow on hover */
+}
+
+/* Restore the "Links" dropdown */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  min-width: 200px;
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex; /* Show when hovering */
+}
+
+.dropdown-menu li {
+  padding: 10px 15px;
+  text-align: left;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-menu li:hover {
+  background: #ffda1b;
+}
+
+.scroll-link {
+  color: black;
+  font-weight: normal;
+  text-decoration: none;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover state */
+.scroll-link:hover {
+  color: #ffda1b; /* Gold */
+}
+
+*{
+  font-family:Arial, Helvetica, sans-serif;
+}
+
