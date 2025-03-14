@@ -30,11 +30,10 @@ const Home = () => {
 
       {/* Volunteer Button */}
       <div className="volunteer-btn-container">
-        <button className="volunteer-btn">
-          <Link to="gallery-container" smooth={true} duration={500} offset={-100} className="scroll">
-            See what we do
-          </Link>
-        </button>
+        <Link to="gallery-container" className="volunteer-btn scroll" smooth={true} duration={500} offset={-100} >
+          See what we do
+        </Link>
+
       </div>
     </section>
   );

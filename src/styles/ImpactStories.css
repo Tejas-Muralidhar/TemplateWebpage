@@ -24,6 +24,18 @@
     margin-bottom: 2rem;
 }
 
+.impact-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.impact-body p{
+    color: white;
+}
+
 /* Bento Grid Layout */
 /* Bento Grid Layout - Reduce Width */
 .impact-bento-grid {
@@ -129,13 +141,14 @@
 
 .story-heading-3 {
     position: relative;
-    bottom: 70%;
+    bottom: 80%;
     right: 0%;
 }
 
 .student-image-3 {
-    top: 27.5%;
+    top: 21%;
     left: 0%;
+    height: 35vh;
 }
 
 .story-heading-4 {

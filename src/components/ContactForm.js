@@ -128,16 +128,24 @@ const ContactForm = () => {
             required
           />
 
-          <div className="checkbox-container">
+
+
+          <div className="form-check checkbox-container">
             <input
+              className="form-check-input"
               type="checkbox"
-              id="volunteerInterest"
-              name="volunteerInterest"
+              id="flexCheckDefault"
               checked={formData.volunteerInterest}
-              onChange={handleChange}
+              onChange={(e) => setFormData(prev => ({
+                ...prev,
+                volunteerInterest: e.target.checked
+              }))}
             />
-            <label htmlFor="volunteerInterest">Show your interest to join us!</label>
+            <label className="form-check-label" htmlFor="flexCheckDefault">
+              Show your Interest to Volunteer!
+            </label>
           </div>
+
 
           <button
             type="submit"
