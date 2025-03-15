@@ -11,7 +11,7 @@ const About = () => {
     <section className="about" ref={ref}>
       <div className="about-container">
         {/* Heading */}
-        <h2 className="about-heading">What is {aboutData["Center Name"]}?</h2>
+        <h4 className="about-heading">What is {aboutData["Center Name"]}?</h4>
 
         {/* Description */}
         <p className="about-text">

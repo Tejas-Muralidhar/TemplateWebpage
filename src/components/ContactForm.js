@@ -1,9 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import "../styles/ContactForm.css";
 import contact from "../data/contact.json";
 
 const ContactForm = () => {
+
+  const [heading, setHeading] = useState("Got a question? Fill out this quick form, and we'll get back to you!");
+
+  useEffect(() => {
+    const updateHeading = () => {
+      if (window.innerWidth <= 600) {
+        setHeading("Have Questions? Let’s Talk!");
+      } else {
+        setHeading("Got a question? Fill out this quick form, and we'll get back to you!");
+      }
+    };
+
+    // Run on mount
+    updateHeading();
+
+    // Listen for window resize
+    window.addEventListener("resize", updateHeading);
+
+    return () => window.removeEventListener("resize", updateHeading);
+  }, []);
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -78,11 +99,11 @@ const ContactForm = () => {
 
   return (
     <section id="contact" className="contact-section">
-      <h2>Got a question? Fill out this quick form, and we'll get back to you!</h2>
+      <h4 className="contact-heading">{heading}</h4>
       <div className="FormandPicArt">
         <form onSubmit={handleSubmit} className="contact-form">
           <label htmlFor="fullName" className="Formlabel">
-            Full Name
+            <p className="subtitle">Full Name</p>
           </label>
           <input
             type="text"
@@ -94,7 +115,7 @@ const ContactForm = () => {
           />
 
           <label htmlFor="email" className="Formlabel">
-            Email Address
+          <p className="subtitle">Email Address</p>
           </label>
           <input
             type="email"
@@ -106,7 +127,7 @@ const ContactForm = () => {
           />
 
           <label htmlFor="contact" className="Formlabel">
-            Contact Number
+          <p className="subtitle">Contact Number</p>
           </label>
           <input
             type="text"
@@ -118,7 +139,7 @@ const ContactForm = () => {
           />
 
           <label htmlFor="message" className="Formlabel">
-            Message
+          <p className="subtitle">Message</p>
           </label>
           <textarea
             name="message"
@@ -142,7 +163,7 @@ const ContactForm = () => {
               }))}
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
-              Show your Interest to Volunteer!
+            <p className="subtitle">Show your interest to Volunteer!</p>
             </label>
           </div>
 
@@ -156,12 +177,12 @@ const ContactForm = () => {
               cursor: isFormValid ? "pointer" : "not-allowed",
             }}
           >
-            Submit
+            <p className="subtitle">Submit</p>
           </button>
         </form>
         <img src="/assets/ContactForm/image1.png" width={"300px"} alt="Contact Illustration" />
       </div>
-      {status && <p className="status-message">{status}</p>}
+      {status && <p className="status-message subtitle">{status}</p>}
     </section>
   );
 };

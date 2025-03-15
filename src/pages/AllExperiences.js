@@ -5,6 +5,27 @@ import "../styles/AllExperiences.css";
 import experiences from "../data/experiences.json";
 
 const AllExperiences = () => {
+
+  const [heading, setHeading] = useState("Ready to read more? Scroll through these amazing volunteer stories!");
+  
+    useEffect(() => {
+      const updateHeading = () => {
+        if (window.innerWidth <= 600) {
+          setHeading("Journeys of Giving & Growth!");
+        } else {
+          setHeading("Ready to read more? Scroll through these amazing volunteer stories!");
+        }
+      };
+  
+      // Run on mount
+      updateHeading();
+  
+      // Listen for window resize
+      window.addEventListener("resize", updateHeading);
+  
+      return () => window.removeEventListener("resize", updateHeading);
+    }, []);
+
   const navigate = useNavigate();
   const [selectedExperience, setSelectedExperience] = useState(null);
   const modalRef = useRef(null);
@@ -32,18 +53,17 @@ const AllExperiences = () => {
   }, [selectedExperience]);
 
   // Function to truncate text
-  const truncateText = (text, wordLimit) => {
-    const words = text.split(" ");
-    return words.length > wordLimit ? words.slice(0, wordLimit).join(" ") + "..." : text;
+  const truncateText = (text, charLimit) => {
+    return text.length > charLimit ? text.substring(0, charLimit) + "..." : text;
   };
 
   return (
     <section className="all-experiences-section all-experiences">
       <div className="headingAndCards">
         <div className="all-experience-header">
-          <h2 className="all-experience-heading">
-            See the journey every single one of our volunteers took!
-          </h2>
+          <h4 className="all-experience-heading">
+            {heading}
+          </h4>
         </div>
 
         <div className="all-experience-grid">
@@ -56,13 +76,13 @@ const AllExperiences = () => {
               <img src={exp.image} alt={exp.name} className="volunteer-image-full" />
               <div className="all-experience-content">
                 <div className="all-experience-header-row">
-                  <h3>
+                  <h6>
                     {exp.name}, {exp.age}
-                  </h3>
+                  </h6>
                   <p className="year">{exp.year}</p>
                 </div>
-                <p className="all-experience-text">
-                  "{truncateText(exp.experience, 50)}"
+                <p className="all-experience-text subtitle">
+                  "{truncateText(exp.experience, 150)}"
                 </p>
                 <span className="read-more">Read More</span>
               </div>
@@ -71,7 +91,7 @@ const AllExperiences = () => {
         </div>
         {/* Back Button */}
         <a className="back-button" onClick={() => navigate(-1)}>
-          Back
+          <p className="subtitle">Back</p>
         </a>
       </div>
 
@@ -79,12 +99,12 @@ const AllExperiences = () => {
         <>
           <div className="gallery-modal-overlay" onClick={() => setSelectedExperience(null)}></div>
           <div className="expanded-experience-modal" ref={modalRef}>
-            <button className="close-btn" onClick={() => setSelectedExperience(null)}>×</button>
+            <button className="close-btn" onClick={() => setSelectedExperience(null)}><h6>×</h6></button>
             <img src={selectedExperience.image} alt={selectedExperience.name} className="expanded-image" />
             <div className="expanded-content">
-              <h3>{selectedExperience.name}, {selectedExperience.age}</h3>
+              <h6>{selectedExperience.name}, {selectedExperience.age}</h6>
               <p className="year">{selectedExperience.year}</p>
-              <p>{selectedExperience.experience}</p>
+              <p className="subtitle">{selectedExperience.experience}</p>
             </div>
           </div>
         </>

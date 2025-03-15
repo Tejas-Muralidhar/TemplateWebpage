@@ -12,50 +12,41 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Align text to left */
-  width: 50vw;
+  align-items: center;
+  width: 90%;
   max-width: 600px;
   background: #5d1aae;
   padding: 30px;
   border-radius: 10px;
 }
 
-.contact-section h2 {
+.contact-heading {
   color: black;
-  font-size: 2rem;
   background-color: #ffda1b;
-  width: 100vw;
-  font-size: 2rem;
+  width: 100%;
   padding: 1%;
-  margin: 0;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
   text-align: center;
 }
 
-/* Label Styling */
 .contact-form label {
   font-weight: bold;
   color: rgb(255, 255, 255);
-  font-size: 16px;
   margin-bottom: 5px;
-  display: block; /* Places label above input */
+  display: block;
   text-align: left;
-  width: 90%;
+  width: 100%;
 }
 
-/* Input Fields */
 .contact-form input:not([type="checkbox"]),
 .contact-form textarea {
-  width: 90%;
-  min-width: 300px;
-  max-width: 100%;
+  width: 100%;
   padding: 12px;
   margin-bottom: 15px;
   border: 2px solid #000000;
   border-radius: 8px;
-  font-size: 16px;
-  font-family: inherit; /* Ensures consistent font */
-  color: #000; /* Ensures text color is the same */
+  font-family: inherit;
+  color: #000;
   transition: 0.3s ease-in-out;
 }
 
@@ -66,27 +57,18 @@
   box-shadow: 0px 0px 5px rgba(0, 122, 204, 0.3);
 }
 
-/* Textarea */
 .contact-form textarea {
   height: 150px;
   resize: vertical;
 }
 
-#volunteerInterest{
-  min-width: none;
-  max-width: none;
-  width: max-content;
-}
-
-/* Checkbox Styling */
 .checkbox-container {
   display: flex;
-  align-items: center;  /* Ensures checkbox and text are aligned */
-  width: 90%;
-  font-size: 16px;
+  align-items: center;
+  width: 100%;
   margin: 10px 0;
-  gap: 10px; /* Adds spacing between checkbox and label */
-  white-space: nowrap; /* Prevents label from wrapping to next line */
+  gap: 10px;
+  white-space: nowrap;
 }
 
 .checkbox-container input {
@@ -95,17 +77,14 @@
   margin: 0;
 }
 
-/* Submit Button */
 .contact-form button {
-  width: 95%;
+  width: 100%;
   height: 50px;
   padding: 12px;
-  /* background-color: #ffda1b; */
   background-color: #222;
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 8px;
-  font-size: 18px;
   cursor: pointer;
   transition: 0.3s;
   margin-top: 15px;
@@ -116,11 +95,9 @@
   background-color: #d8b400;
 }
 
-/* Status Message */
 .status-message {
   margin-top: 10px;
   font-weight: bold;
-  font-size: 1rem;
   color: rgb(0, 0, 0);
   background-color: #ffda1b;
   border-radius: 12px;
@@ -129,16 +106,36 @@
   width: max-content;
 }
 
-/* Responsive Design */
+.FormandPicArt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10vw;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.FormandPicArt img {
+  max-width: 90%;
+  height: auto;
+}
+
 @media (max-width: 768px) {
   .contact-form {
-    width: 80vw;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .FormandPicArt {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
   }
 }
 
-.FormandPicArt{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 10vw;
+@media (max-width: 1024px) {
+  .FormandPicArt img {
+    display: none;
+  }
 }

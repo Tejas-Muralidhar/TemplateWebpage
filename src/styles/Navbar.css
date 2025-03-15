@@ -1,114 +1,76 @@
-/* Navbar container */
+/* Navbar Styles */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem;
-    z-index: 50;
-    height: 100px; /* Set a fixed height for the navbar */
-  }
-  
-  /* Flex container for content */
-  .navbar .container {
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Logo and Lakshya container */
-  .navbar .logo-container {
-    display: flex;
-    align-items: center; /* Aligns the logo and text vertically */
-    gap: 0.5rem; /* Adds some space between the logo and the text */
-  }
-  
-  /* Logo styling */
-  .navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ffda1b; /* Blue-600 */
-  }
-  
-  #LakshyaLogo{
-    margin-left: 15px;
-  }
-
-  /* Desktop Navigation (Flex applied) */
-  .navbar .desktop-nav {
-    display: none;
-  }
-  
-
-  @media (min-width: 768px) {
-    .navbar .desktop-nav {
-      display: flex;
-      gap: 2rem;
-      font-size: 1.125rem;
-      font-weight: 500;
-      align-items: center;
-    }
-  }
-  
-  .navbar .desktop-nav li {
-    list-style: none;
-  }
-  
-  .navbar .desktop-nav li .scroll-link {
-    cursor: pointer;
-    color: #000000; /* Blue-500 */
-    transition: color 0.3s ease;
-  }
-  
-  /* Sign Up Button */
-  .navbar .signup-btn {
-    display: none;
-  }
-  
-  @media (min-width: 768px) {
-    .navbar .signup-btn {
-      display: block;
-      background-color: #2563eb; /* Blue-500 */
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-  
-    .navbar .signup-btn:hover {
-      background-color: #1d4ed8; /* Blue-600 */
-    }
-  }
-  
-  /* Add padding to the first element after navbar */
-  body {
-    padding-top: 100px; /* Same as navbar height */
-  }
-
-/* Default state: Black */
-.navbar .desktop-nav li .scroll-link {
-  cursor: pointer !important;
-  color: black; /* Default color */
-  font-weight: normal;
-  transition: color 0.3s ease, font-weight 0.3s ease;
-  text-decoration: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  z-index: 50;
+  height: 80px; /* Adjusted height for better responsiveness */
+  display: flex;
+  align-items: center;
 }
 
-/* Hover state: Yellow */
-.navbar .desktop-nav li .scroll-link:hover {
-  color: #ffda1b; /* Yellow on hover */
+/* Navbar Container */
+.navbar .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-/* Restore the "Links" dropdown */
+/* Logo Styling */
+.navbar .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+}
+
+.logo-img-lakshya {
+  height: 40px;
+  width: auto;
+}
+
+/* Mobile Menu Icon on the Left */
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+/* Desktop Navigation */
+.navbar .desktop-nav {
+  display: flex;
+  gap: 1.5rem;
+  /* font-size: 1rem; */
+  font-weight: 500;
+  align-items: center;
+}
+
+.navbar .desktop-nav li {
+  list-style: none;
+  cursor: pointer;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.navbar .desktop-nav li:hover, .navbar .desktop-nav li:active {
+  color: #ffda1b;
+}
+
+/* Dropdown Menu */
 .dropdown {
   position: relative;
-  cursor: pointer;
 }
 
 .dropdown-menu {
@@ -119,21 +81,21 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   min-width: 200px;
-  display: none; /* Initially hidden */
+  display: none;
   flex-direction: column;
   padding: 10px 0;
   z-index: 1000;
 }
 
-.dropdown:hover .dropdown-menu {
-  display: flex; /* Show when hovering */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu { 
+    display: flex;
 }
+
 
 .dropdown-menu li {
   padding: 10px 15px;
   text-align: left;
-  white-space: nowrap;
-  transition: background 0.3s;
 }
 
 .dropdown-menu li a {
@@ -141,24 +103,40 @@
   color: black;
 }
 
-.dropdown-menu li:hover {
-  background: #ffda1b;
-}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block;
+  }
 
-.scroll-link {
-  color: black;
-  font-weight: normal;
-  text-decoration: none;
-  transition: color 0.3s ease, font-weight 0.3s ease;
-  cursor: pointer;
-}
+  .scroll-link{
+    padding: 0;
+  }
 
-/* Hover state */
-.scroll-link:hover {
-  color: #ffda1b; /* Gold */
-}
+  .navbar .desktop-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
 
-*{
-  font-family:Arial, Helvetica, sans-serif;
-}
+  .navbar .desktop-nav.mobile-nav-active {
+    display: flex;
+  }
 
+  .navbar .desktop-nav li {
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Adjusting logo position */
+  .navbar .logo-container {
+    margin-left: auto;
+  }
+}

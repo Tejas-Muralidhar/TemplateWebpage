@@ -1,6 +1,7 @@
 import React from "react";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import "../styles/Footer.css"; // Import CSS file
+import contact from "../data/contact.json";
 
 export default function Footer() {
   return (
@@ -25,29 +26,30 @@ export default function Footer() {
 
         {/* Column 2: What We Do */}
         <div className="footer-column">
-          <h3 className="footer-title">WHAT WE DO</h3>
+          <h6 className="footer-title">WHAT WE DO</h6>
           <ul className="footer-links">
-            <li><a href="https://uandi.org.in/volunteer" target="_blank">Volunteering</a></li>
+            <li><a href="https://uandi.org.in/volunteer" target="_blank"><p className="subtitle">Volunteering</p></a></li>
             <li><a href="https://uandi.my.canva.site/fellowship-2024" target="_blank">Fellowship</a></li>
-            <li><a href="https://www.canva.com/design/DAE55FVu9w4/j4ErARvafRu4eoj-zMxChw/view?website#2:apply-now" target="_blank">Internship</a></li>
-            <li><a href="https://uandi.org.in/hiring" target="_blank">Work</a></li>
-            <li><a href="https://uandi.org.in/csr" target="_blank">CSR Partnership</a></li>
-            <li><a href="https://uandi.org.in/donatenow" target="_blank">Donate</a></li>
+            <li><a href="https://www.canva.com/design/DAE55FVu9w4/j4ErARvafRu4eoj-zMxChw/view?website#2:apply-now" target="_blank"><p className="subtitle">Internship</p></a></li>
+            <li><a href="https://uandi.org.in/hiring" target="_blank"><p className="subtitle">Work</p></a></li>
+            <li><a href="https://uandi.org.in/csr" target="_blank"><p className="subtitle">CSR Partnership</p></a></li>
+            <li><a href="https://uandi.org.in/donatenow" target="_blank"><p className="subtitle">Donate</p></a></li>
           </ul>
         </div>
 
         {/* Column 3: Where We Are */}
         <div className="footer-column">
-          <h3 className="footer-title">WHERE WE ARE</h3>
-          <p className="footer-text">A: 8/1, Gover Road,</p>
-          <p className="footer-text">Cox Town, Bangalore</p>
-          <p className="footer-text">560 005</p>
+          <h6 className="footer-title">WHERE WE ARE</h6>
+          <p className="footer-text subtitle">A: 8/1, Gover Road,</p>
+          <p className="footer-text subtitle">Cox Town, Bangalore</p>
+          <p className="footer-text subtitle">560 005</p>
         </div>
 
         {/* Column 4: Get in Touch */}
         <div className="footer-column">
-          <h3 className="footer-title">GET IN TOUCH</h3>
-          <p className="footer-text">E: lakshyalearningcenter.uandi@gmail.com</p>
+          <h6 className="footer-title">GET IN TOUCH</h6>
+          <p className="footer-text subtitle">{contact["Leader Contact Number"]}</p>
+          <p className="footer-text subtitle">{contact["Leader or Center Email"]}</p>
         </div>
 
       </div>

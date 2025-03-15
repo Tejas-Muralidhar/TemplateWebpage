@@ -3,46 +3,43 @@
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   text-align: center;
-  height: 494px;
+  min-height: 494px; /* Allows content to expand */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 0 2rem 0; /* Ensures equal padding on top and bottom */
+  padding: 2rem 1rem; /* Ensures spacing */
 }
 
 /* Container for the content */
 .about-container {
   max-width: 900px;
-  margin: 0;
+  margin: 0 auto;
   padding: 20px;
 }
 
 /* Heading Style */
 .about-heading {
-  font-size: 3rem;
   font-weight: bold;
-  color: rgb(255, 255, 255);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Paragraph/Text Style */
 .about-text {
-  font-size: 1.125rem;
   line-height: 1.6;
-  color: rgb(255, 255, 255);
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 /* Stats Section */
 .stats-container {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center; /* Centers stats */
+  gap: 2rem; /* Space between items */
+  flex-wrap: wrap; /* Wraps on smaller screens */
   max-width: 900px;
-  padding: 0 20px;
+  padding: 1.5rem 15px; /* Responsive padding */
 }
 
 /* Each stat box */
@@ -53,22 +50,26 @@
   justify-content: center;
   text-align: center;
   gap: 0.5rem;
-
+  min-width: 120px; /* Prevents excessive shrink */
 }
 
 /* Styling for the numbers */
 .stat h3 {
-  font-size: 3rem; /* Large number */
   font-weight: bold;
-  color: #ffda18; /* Black */
-  line-height: 1; /* Ensures closer spacing between number and text */
-  margin-bottom: 5px; /* Adjust spacing */
+  color: #ffda18;
+  line-height: 1;
+  margin-bottom: 5px;
 }
 
 /* Styling for the labels */
 .stat p {
-  font-size: 1.25rem;
-  color: rgb(255, 255, 255);
   font-weight: normal;
   margin: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .stats-container {
+    gap: 1rem;
+  }
 }

@@ -42,12 +42,10 @@
 }
 
 .footer-description {
-  font-size: 14px;
   color: #bbb;
 }
 
 .footer-title {
-  font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #ffda1b;
@@ -73,6 +71,8 @@
 }
 
 .footer-text {
-  font-size: 14px;
   color: #bbb;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }

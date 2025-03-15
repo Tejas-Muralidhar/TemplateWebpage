@@ -7,7 +7,6 @@
 }
 
 .gallery-heading {
-  font-size: 2rem;
   font-weight: bold;
   color: #ffffff; /* White text for contrast */
   background-color: #5d1aae; /* Purple background */
@@ -28,10 +27,23 @@
 .gallery-carousel-track {
   display: flex;
   gap: 2vw;
-  min-width: 400%; /* Set this to 100% so the carousel will move as per content */
+  min-width: 200%;
   animation: gallery-scroll 120s linear infinite;
 }
 
+.gallery-carousel-track.paused {
+  animation-play-state: paused;
+}
+
+/* Update the animation */
+@keyframes gallery-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-500%); /* Only half, because of duplication */
+  }
+}
 
 .gallery-carousel-item {
   display: flex;
@@ -68,34 +80,24 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.gallery-carousel-item:hover .gallery-carousel-image {
+.gallery-carousel-item:hover .gallery-carousel-image,
+.gallery-carousel-item:active .gallery-carousel-image {
   transform: scale(1.05);
 }
+
 
 /* Caption & Date */
 .gallery-carousel-caption {
   margin-top: 10px;
-  font-size: 1rem;
   color: #5d1aae;
   font-weight: bold;
   text-align: center;
 }
 
 .gallery-carousel-date {
-  font-size: 0.9rem;
   color: black;
   font-weight: bold;
   text-align: center;
-}
-
-/* Animation for infinite scroll */
-@keyframes gallery-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%); /* Adjust this based on the total image width */
-  }
 }
 
 /* Modal */
@@ -120,38 +122,61 @@
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
   z-index: 1001;
-  max-width: 80%;
-  max-height: 85%;
+  width: auto; /* Take up most of the screen width */
+  max-width: 700px; /* Prevent excessive width */
+  max-height: 85vh; /* Prevent excessive height */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevent content from overflowing */
 }
 
+
 .gallery-modal-image {
-  max-width: 100%;
-  max-height: 500px;
+  width: 100%; /* Ensure image stays inside modal */
+  max-height: 60vh; /* Prevent image from taking full height */
+  object-fit: contain; /* Maintain aspect ratio */
   border-radius: 10px;
 }
 
-.gallery-modal-caption {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  color: #333;
+.gallery-modal-caption, .gallery-modal-date {
+  width: 100%; /* Ensure text doesn’t overflow */
+  padding: 10px;
   font-weight: bold;
+  color: #333;
+  text-align: center;
+  word-wrap: break-word;
 }
 
-.gallery-modal-date {
-  font-size: 1rem;
-  color: #777;
+.gallery-modal-date{
+  padding-top: 0;
 }
 
-/* Close Button */
+.gallery-modal-caption{
+  padding-bottom: 0;
+}
+
 .gallery-close-btn {
   position: absolute;
   top: 10px;
   right: 15px;
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
+  color: black;
+}
+
+/* Make modal fullscreen on very small screens */
+@media (max-width: 600px) {
+  .gallery-modal-content {
+    width: 80vw;
+    max-height: 90vh;
+    padding: 5px;
+  }
+
+  .gallery-modal-image {
+    max-width: 100%;
+    max-height: 85vh;
+  }
 }

@@ -31,7 +31,7 @@ const Home = () => {
       {/* Volunteer Button */}
       <div className="volunteer-btn-container">
         <Link to="gallery-container" className="volunteer-btn scroll" smooth={true} duration={500} offset={-100} >
-          See what we do
+          <p>See what we do</p>
         </Link>
 
       </div>
