@@ -2,41 +2,50 @@ import { useNavigate } from "react-router-dom";
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/AllExperiences.css";
-import experiences from "../data/experiences.json";
+import experiencesData from "../data/experiences.json";
 
 const AllExperiences = () => {
-
   const [heading, setHeading] = useState("Ready to read more? Scroll through these amazing volunteer stories!");
-  
-    useEffect(() => {
-      const updateHeading = () => {
-        if (window.innerWidth <= 600) {
-          setHeading("Journeys of Giving & Growth!");
-        } else {
-          setHeading("Ready to read more? Scroll through these amazing volunteer stories!");
-        }
-      };
-  
-      // Run on mount
-      updateHeading();
-  
-      // Listen for window resize
-      window.addEventListener("resize", updateHeading);
-  
-      return () => window.removeEventListener("resize", updateHeading);
-    }, []);
-
   const navigate = useNavigate();
   const [selectedExperience, setSelectedExperience] = useState(null);
   const modalRef = useRef(null);
+  const [shuffledExperiences, setShuffledExperiences] = useState([]);
+
+  useEffect(() => {
+    // Function to shuffle array using Fisher-Yates Algorithm
+    const shuffleArray = (array) => {
+      let shuffled = [...array];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    };
+
+    setShuffledExperiences(shuffleArray(experiencesData));
+  }, []);
+
+  useEffect(() => {
+    const updateHeading = () => {
+      if (window.innerWidth <= 600) {
+        setHeading("Journeys of Giving & Growth!");
+      } else {
+        setHeading("Ready to read more? Scroll through these amazing volunteer stories!");
+      }
+    };
+
+    updateHeading();
+    window.addEventListener("resize", updateHeading);
+
+    return () => window.removeEventListener("resize", updateHeading);
+  }, []);
 
   // Scroll to top when the component is mounted
   useEffect(() => {
-    window.scrollTo(0, 0); // This will scroll the page to the top
+    window.scrollTo(0, 0);
   }, []);
 
-  // Close modal when clicking outside
-  React.useEffect(() => {
+  useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         setSelectedExperience(null);
@@ -61,13 +70,11 @@ const AllExperiences = () => {
     <section className="all-experiences-section all-experiences">
       <div className="headingAndCards">
         <div className="all-experience-header">
-          <h4 className="all-experience-heading">
-            {heading}
-          </h4>
+          <h4 className="all-experience-heading">{heading}</h4>
         </div>
 
         <div className="all-experience-grid">
-          {experiences.map((exp, index) => (
+          {shuffledExperiences.map((exp, index) => (
             <div
               key={index}
               className="all-experience-card"
@@ -89,6 +96,7 @@ const AllExperiences = () => {
             </div>
           ))}
         </div>
+
         {/* Back Button */}
         <a className="back-button" onClick={() => navigate(-1)}>
           <p className="subtitle">Back</p>
@@ -99,10 +107,14 @@ const AllExperiences = () => {
         <>
           <div className="gallery-modal-overlay" onClick={() => setSelectedExperience(null)}></div>
           <div className="expanded-experience-modal" ref={modalRef}>
-            <button className="close-btn" onClick={() => setSelectedExperience(null)}><h6>×</h6></button>
+            <button className="close-btn" onClick={() => setSelectedExperience(null)}>
+              <h6>×</h6>
+            </button>
             <img src={selectedExperience.image} alt={selectedExperience.name} className="expanded-image" />
             <div className="expanded-content">
-              <h6>{selectedExperience.name}, {selectedExperience.age}</h6>
+              <h6>
+                {selectedExperience.name}, {selectedExperience.age}
+              </h6>
               <p className="year">{selectedExperience.year}</p>
               <p className="subtitle">{selectedExperience.experience}</p>
             </div>
