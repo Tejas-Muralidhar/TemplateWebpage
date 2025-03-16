@@ -28,7 +28,7 @@
   display: flex;
   gap: 2vw;
   min-width: 200%;
-  animation: gallery-scroll 90s linear infinite;
+  animation: gallery-scroll 20s linear infinite;
 }
 
 .gallery-carousel-track.paused {
@@ -41,7 +41,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-200%);
+    transform: translateX(-290%);
   }
 }
 
@@ -51,7 +51,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-300%);
+      transform: translateX(-410%);
     }
   }
 }
@@ -62,7 +62,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-350%);
+      transform: translateX(-530%);
     }
   }
 }
@@ -73,7 +73,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-650%);
+      transform: translateX(-930%);
     }
   }
 }
@@ -84,7 +84,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-750%);
+      transform: translateX(-1050%);
     }
   }
 }
@@ -95,7 +95,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-850%);
+      transform: translateX(-1220%);
     }
   }
 }
