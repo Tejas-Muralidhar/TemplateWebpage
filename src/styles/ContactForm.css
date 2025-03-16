@@ -146,3 +146,7 @@
   margin: 0;
   accent-color: #ffda1b; /* Yellow color */
 }
+
+.mandatory-field{
+  color: #ffda1b;
+}

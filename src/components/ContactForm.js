@@ -103,43 +103,43 @@ const ContactForm = () => {
       <div className="FormandPicArt">
         <form onSubmit={handleSubmit} className="contact-form">
           <label htmlFor="fullName" className="Formlabel">
-            <p className="subtitle">Full Name</p>
+            <p className="subtitle">Full Name<span className="mandatory-field">*</span></p>
           </label>
           <input
             type="text"
             name="fullName"
-            placeholder="John Doe"
+            placeholder="Your Name"
             value={formData.fullName}
             onChange={handleChange}
             required
           />
 
           <label htmlFor="email" className="Formlabel">
-          <p className="subtitle">Email Address</p>
+          <p className="subtitle">Email Address<span className="mandatory-field">*</span></p>
           </label>
           <input
             type="email"
             name="email"
-            placeholder="johndoe@gmail.com"
+            placeholder="Your Email ID"
             value={formData.email}
             onChange={handleChange}
             required
           />
 
           <label htmlFor="contact" className="Formlabel">
-          <p className="subtitle">Contact Number</p>
+          <p className="subtitle">Contact Number<span className="mandatory-field">*</span></p>
           </label>
           <input
             type="text"
             name="contact"
-            placeholder="1234567890"
+            placeholder="Your Phone Number"
             value={formData.contact}
             onChange={handleChange}
             required
           />
 
           <label htmlFor="message" className="Formlabel">
-          <p className="subtitle">Message</p>
+          <p className="subtitle">Message<span className="mandatory-field">*</span></p>
           </label>
           <textarea
             name="message"
@@ -148,8 +148,6 @@ const ContactForm = () => {
             onChange={handleChange}
             required
           />
-
-
 
           <div className="form-check checkbox-container">
             <input
