@@ -21,82 +21,29 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding-top: 3rem;
 }
 
 .gallery-carousel-track {
   display: flex;
   gap: 2vw;
   min-width: 200%;
-  animation: gallery-scroll 90s linear infinite;
+}
+
+.rfm-child{
+  margin: 1rem;
 }
 
 .gallery-carousel-track.paused {
   animation-play-state: paused;
 }
 
-/* Update the animation */
+/* Dynamic animation */
 @keyframes gallery-scroll {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-290%);
-  }
-}
-
-@media (max-width: 1025px) {
-  @keyframes gallery-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-410%);
-    }
-  }
-}
-
-@media (max-width: 769px) {
-  @keyframes gallery-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-530%);
-    }
-  }
-}
-
-@media (max-width: 426px) {
-  @keyframes gallery-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-930%);
-    }
-  }
-}
-
-@media (max-width: 376px) {
-  @keyframes gallery-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-1050%);
-    }
-  }
-}
-
-@media (max-width: 321px) {
-  @keyframes gallery-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-1250%);
-    }
+    transform: translateX(calc(-100% - 10vw)); /* Adjust dynamically based on viewport width */
   }
 }
 
@@ -139,7 +86,6 @@
 .gallery-carousel-item:active .gallery-carousel-image {
   transform: scale(1.05);
 }
-
 
 /* Caption & Date */
 .gallery-carousel-caption {
@@ -187,7 +133,6 @@
   overflow: hidden; /* Prevent content from overflowing */
 }
 
-
 .gallery-modal-image {
   width: 100%; /* Ensure image stays inside modal */
   max-height: 60vh; /* Prevent image from taking full height */
@@ -234,5 +179,4 @@
     max-width: 100%;
     max-height: 85vh;
   }
-
 }

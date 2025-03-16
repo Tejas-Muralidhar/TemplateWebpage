@@ -72,6 +72,11 @@
   color: #ffda1b;
 }
 
+#nav-dropdown li:hover a {
+  color: #ffda1b !important;
+  transition: color 0.3s ease;
+}
+
 /* Dropdown Menu */
 .dropdown {
   position: relative;

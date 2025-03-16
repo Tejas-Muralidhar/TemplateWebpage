@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Marquee from "react-fast-marquee";
 import "../styles/Gallery.css";
 import images from "../data/gallery.json";
 
@@ -11,9 +12,8 @@ const Gallery = () => {
 
       {/* Carousel with infinite scrolling */}
       <div className="gallery-carousel">
-        <div className={`gallery-carousel-track ${selectedImage ? "paused" : ""}`}>
-          {/* Dynamically duplicating the images */}
-          {[...images, ...images, ...images].map((img, index) => (
+        <Marquee speed={100} pauseOnClick={!selectedImage} play={!selectedImage} gradient={false} className="gallery-carousel-track">
+          {[...images, ...images].map((img, index) => (
             <div key={index} className="gallery-carousel-item" onClick={() => setSelectedImage(img)}>
               {index % 2 === 0 ? (
                 <>
@@ -32,9 +32,8 @@ const Gallery = () => {
               )}
             </div>
           ))}
-        </div>
+        </Marquee>
       </div>
-
 
       {/* Modal for Enlarged Image */}
       {selectedImage && (
