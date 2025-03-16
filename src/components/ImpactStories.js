@@ -60,6 +60,10 @@ const ImpactStories = () => {
                         <img src={impactStories[4].image} alt={impactStories[4].name} className="student-image student-image-5" />
                         <h6 className="story-heading story-heading-5">{impactStories[4].name}</h6>
                     </div>
+                    <div className="impact-bento-item" onClick={() => setSelectedStory(impactStories[5])}>
+                        <img src={impactStories[5].image} alt={impactStories[5].name} className="student-image student-image-6" />
+                        <h6 className="story-heading story-heading-6">{impactStories[5].name}</h6>
+                    </div>
                 </div>
             </div>
 
