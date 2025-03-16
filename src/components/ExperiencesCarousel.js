@@ -10,7 +10,8 @@ const ExperiencesSection = () => {
   const [randomExperiences, setRandomExperiences] = useState([]);
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(0);
   const modalRef = useRef(null);
-  const videoRef = useRef(null); // Reference to the video element
+  const videoRef = useRef(null);
+  const touchStartX = useRef(0);
 
   useEffect(() => {
     const updateHeading = () => {
@@ -44,23 +45,41 @@ const ExperiencesSection = () => {
 
   const truncateText = (text, charLimit) => text.length > charLimit ? text.substring(0, charLimit) + "..." : text;
 
-  // Change the displayed video by updating key instead of src
+  // Change video function (for buttons and swipe)
   const changeVideo = (direction) => {
     setSelectedVideoIndex((prevIndex) => {
       let newIndex = prevIndex + direction;
-      if (newIndex < 0) newIndex = videos.length - 1; // Loop back to last video
-      if (newIndex >= videos.length) newIndex = 0; // Loop back to first video
-  
-      // Ensure the video updates by reloading it
+      if (newIndex < 0) newIndex = videos.length - 1;
+      if (newIndex >= videos.length) newIndex = 0;
+
       setTimeout(() => {
         if (videoRef.current) {
-          videoRef.current.load(); // Reload the video source
-          videoRef.current.play(); // Auto-play after change (optional)
+          videoRef.current.load(); // Reload video to apply changes
+          videoRef.current.play(); // Optional: Auto-play after change
         }
-      }, 100); // Small delay to ensure state updates
-  
+      }, 100);
+
       return newIndex;
     });
+  };
+
+  // Touch event handlers for swipe gestures
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX; // Store the starting X position
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const deltaX = touchStartX.current - touchEndX; // Difference between start and end positions
+
+    if (Math.abs(deltaX) > 50) {
+      // If swipe is significant (e.g., more than 50px)
+      if (deltaX > 0) {
+        changeVideo(1); // Swipe left → Next video
+      } else {
+        changeVideo(-1); // Swipe right → Previous video
+      }
+    }
   };
 
   return (
@@ -95,9 +114,13 @@ const ExperiencesSection = () => {
         <img src="/assets/Videos/arrow.png" alt="Arrow pointing to videos" className="arrow-image" />
 
         <div className="video-carousel-container">
-          <div className="video-title-overlay"><p>{videos[selectedVideoIndex].title}</p></div> {/* ✅ Moved Above */}
+          <div className="video-title-overlay"><p>{videos[selectedVideoIndex].title}</p></div>
 
-          <div className="video-container">
+          <div
+            className="video-container"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <button className="carousel-btn left" onClick={() => changeVideo(-1)}>❮</button>
 
             <video
