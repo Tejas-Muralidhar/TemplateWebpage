@@ -79,8 +79,8 @@
   border-radius: 12px;
   text-align: left;
   width: 100%;
-  max-width: 300px;
   height: 500px;
+  max-height: 70vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -130,6 +130,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
+  font-style: italic;
 }
 
 /* Read More Link */
@@ -167,6 +168,7 @@
   .all-experience-card {
     max-width: 90%;
     height: auto;
+    min-height: 450px;
   }
 
   .all-experience-content {
@@ -181,6 +183,7 @@
 
   .all-experience-card {
     max-width: 95%;
+    min-height: 420px;
   }
 
   .read-more {

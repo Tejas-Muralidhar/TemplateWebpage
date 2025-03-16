@@ -14,7 +14,7 @@ const About = () => {
         <h4 className="about-heading">What is {aboutData["Center Name"]}?</h4>
 
         {/* Description */}
-        <p className="about-text">
+        <p className="about-text subtitle">
           {aboutData["About U&I"]}
           <br /><br />
           {aboutData["About the center"]}

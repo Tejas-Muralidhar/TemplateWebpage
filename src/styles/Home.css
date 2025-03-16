@@ -4,18 +4,39 @@
   position: relative;
   height: auto; /* Will adapt to image height */
   background-color: black;
+  margin-top: 80px;
 }
 
 .carousel-container {
   width: 100%;
-  height: auto; /* Let it adapt dynamically */
+  height: 100%; /* Let it adapt dynamically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .carousel-image {
   width: 100%;
-  height: auto; /* Ensures image resizes correctly */
-  max-height: 700px; /* Prevents it from getting too big */
-  object-fit: cover; /* Keeps aspect ratio */
+  height: 60vh; /* Set a fixed height for consistency */
+  max-height: 700px; /* Avoid excessive stretching */
+  object-fit: cover; /* Ensures all images fill the space without distortion */
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .carousel-image {
+    height: 50vh;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-image {
+    height: 50vh;
+    max-height: 350px;
+  }
 }
 
 .volunteer-btn-container {
@@ -47,7 +68,7 @@
 }
 
 .volunteer-btn {
-  padding: 1rem 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: center;
   /* font-size: 1rem; */
@@ -62,7 +83,16 @@
 
 @media (max-width: 768px) {
   .carousel-image {
-    height: 50vh; /* Smaller height for mobile */
+    height: 50vh;
     max-height: 350px;
+  }
+
+  .carousel-image {
+    width: 100%;
+    object-fit: cover; /* Keeps aspect ratio */
+  }
+  
+  .volunteer-btn{
+    padding: 0.5rem 1rem;
   }
 }

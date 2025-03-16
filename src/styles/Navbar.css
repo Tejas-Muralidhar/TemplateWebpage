@@ -31,6 +31,10 @@
   cursor: pointer;
 }
 
+.logo{
+  color: #ffda1b;
+}
+
 .logo-img {
   height: 60px;
   width: auto;

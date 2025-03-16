@@ -139,3 +139,10 @@
     display: none;
   }
 }
+
+.checkbox-container input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #ffda1b; /* Yellow color */
+}
