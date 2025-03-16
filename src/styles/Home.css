@@ -18,7 +18,7 @@
 
 .carousel-image {
   width: 100%;
-  height: 60vh; /* Set a fixed height for consistency */
+  height: 70vh; /* Set a fixed height for consistency */
   max-height: 700px; /* Avoid excessive stretching */
   object-fit: cover; /* Ensures all images fill the space without distortion */
   display: block;
