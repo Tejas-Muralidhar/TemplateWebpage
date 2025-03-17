@@ -390,3 +390,18 @@ video {
     left: 100px;
   }
 }
+
+/* Hide fullscreen button on WebKit browsers (Safari, Chrome, Edge) */
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+/* Hide fullscreen button on Mozilla Firefox */
+video::-moz-fullscreen-button {
+  display: none !important;
+}
+
+/* Hide fullscreen button on all browsers */
+video::cue {
+  display: none !important;
+}

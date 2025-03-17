@@ -125,10 +125,10 @@ const ExperiencesSection = () => {
 
             <video
               ref={videoRef}
-              controls
               playsInline
               className="video-item"
               disablePictureInPicture
+              controls
               controlsList="nofullscreen nodownload"
               onClick={() => {
                 if (videoRef.current.paused) {
@@ -139,8 +139,8 @@ const ExperiencesSection = () => {
               }}
             >
               <source src={videos[selectedVideoIndex].video} type="video/mp4" />
-              Your browser does not support the video tag.
             </video>
+
 
             <button className="carousel-btn right" onClick={() => changeVideo(1)}>❯</button>
           </div>
