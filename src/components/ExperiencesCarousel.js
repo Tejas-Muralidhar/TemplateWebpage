@@ -128,6 +128,7 @@ const ExperiencesSection = () => {
                 ref={videoRef}
                 className="video-item"
                 controls
+                controlsList="nodownload"
                 onClick={() => {
                   if (videoRef.current.paused) {
                     videoRef.current.play();
