@@ -41,6 +41,7 @@ const Navbar = () => {
           <li onClick={() => handleNavigation("impact-section")} className="scroll-link">Impact Stories</li>
           <li onClick={() => handleNavigation("gallery-container")} className="scroll-link">Gallery</li>
           <li onClick={() => handleNavigation("experiences")} className="scroll-link">Experiences</li>
+          <li onClick={() => handleNavigation("watch-text")} className="scroll-link">Videos</li>
 
           {/* Dropdown Menu for Links */}
           <li
