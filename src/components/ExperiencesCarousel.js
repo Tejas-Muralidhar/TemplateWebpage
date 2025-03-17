@@ -28,20 +28,6 @@ const ExperiencesSection = () => {
     setRandomExperiences(shuffled.slice(0, 3));
   }, []);
 
-  useEffect(() => {
-    const updateControlsList = () => {
-      if (videoRef.current) {
-        videoRef.current.setAttribute(
-          "controlsList",
-          window.innerWidth > 480 ? "nofullscreen nodownload" : "nodownload"
-        );
-      }
-    };
-  
-    updateControlsList();
-    window.addEventListener("resize", updateControlsList);
-    return () => window.removeEventListener("resize", updateControlsList);
-  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -140,11 +126,8 @@ const ExperiencesSection = () => {
 
               <video
                 ref={videoRef}
-                playsInline
                 className="video-item"
-                disablePictureInPicture
                 controls
-                controlsList={window.innerWidth > 480 ? "nofullscreen nodownload" : "nodownload"}
                 onClick={() => {
                   if (videoRef.current.paused) {
                     videoRef.current.play();

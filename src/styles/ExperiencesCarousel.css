@@ -392,20 +392,3 @@ video {
     left: 100px;
   }
 }
-
-@media (min-width: 770px) {
-  /* Hide fullscreen button on WebKit browsers (Safari, Chrome, Edge) */
-  video::-webkit-media-controls-fullscreen-button {
-    display: none !important;
-  }
-
-  /* Hide fullscreen button on Mozilla Firefox */
-  video::-moz-fullscreen-button {
-    display: none !important;
-  }
-
-  /* Hide fullscreen button on Microsoft Edge (Chromium) */
-  video::-ms-fullscreen {
-    display: none !important;
-  }
-}
