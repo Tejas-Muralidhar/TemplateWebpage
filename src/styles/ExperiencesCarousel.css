@@ -393,7 +393,7 @@ video {
   }
 }
 
-@media (min-width: 480px) {
+@media (min-width: 770px) {
   /* Hide fullscreen button on WebKit browsers (Safari, Chrome, Edge) */
   video::-webkit-media-controls-fullscreen-button {
     display: none !important;
