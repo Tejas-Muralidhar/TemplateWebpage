@@ -344,7 +344,7 @@ video {
   /* Reduce arrow size and position */
   .carousel-btn {
     font-size: 1.5rem;
-    top: 40%;
+    top: 50%;
   }
 
   /* Ensure buttons are not too close */

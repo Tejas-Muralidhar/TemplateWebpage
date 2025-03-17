@@ -126,6 +126,7 @@ const ExperiencesSection = () => {
             <video
               ref={videoRef}
               controls
+              playsInline
               className="video-item"
               disablePictureInPicture
               controlsList="nofullscreen nodownload"
