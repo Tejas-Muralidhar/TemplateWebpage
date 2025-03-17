@@ -29,6 +29,21 @@ const ExperiencesSection = () => {
   }, []);
 
   useEffect(() => {
+    const updateControlsList = () => {
+      if (videoRef.current) {
+        videoRef.current.setAttribute(
+          "controlsList",
+          window.innerWidth > 480 ? "nofullscreen nodownload" : "nodownload"
+        );
+      }
+    };
+  
+    updateControlsList();
+    window.addEventListener("resize", updateControlsList);
+    return () => window.removeEventListener("resize", updateControlsList);
+  }, []);
+
+  useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         setSelectedExperience(null);
@@ -123,25 +138,23 @@ const ExperiencesSection = () => {
           >
             <button className="carousel-btn left" onClick={() => changeVideo(-1)}>❮</button>
 
-            <video
-              ref={videoRef}
-              playsInline
-              className="video-item"
-              disablePictureInPicture
-              controls
-              controlsList="nofullscreen nodownload"
-              onClick={() => {
-                if (videoRef.current.paused) {
-                  videoRef.current.play();
-                } else {
-                  videoRef.current.pause();
-                }
-              }}
-            >
-              <source src={videos[selectedVideoIndex].video} type="video/mp4" />
-            </video>
-
-
+              <video
+                ref={videoRef}
+                playsInline
+                className="video-item"
+                disablePictureInPicture
+                controls
+                controlsList={window.innerWidth > 480 ? "nofullscreen nodownload" : "nodownload"}
+                onClick={() => {
+                  if (videoRef.current.paused) {
+                    videoRef.current.play();
+                  } else {
+                    videoRef.current.pause();
+                  }
+                }}
+              >
+                <source src={videos[selectedVideoIndex].video} type="video/mp4" />
+              </video>
             <button className="carousel-btn right" onClick={() => changeVideo(1)}>❯</button>
           </div>
         </div>

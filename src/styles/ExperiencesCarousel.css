@@ -334,6 +334,7 @@ video {
 }
 
 @media (max-width: 768px) {
+
   /* Adjust video size */
   .video-item {
     width: 90vw;
@@ -366,6 +367,7 @@ video {
 
 /* Even smaller screens (Phones) */
 @media (max-width: 480px) {
+
   /* Reduce video width further */
   .video-item {
     width: 95vw;
@@ -391,17 +393,19 @@ video {
   }
 }
 
-/* Hide fullscreen button on WebKit browsers (Safari, Chrome, Edge) */
-video::-webkit-media-controls-fullscreen-button {
-  display: none !important;
-}
+@media (min-width: 480px) {
+  /* Hide fullscreen button on WebKit browsers (Safari, Chrome, Edge) */
+  video::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+  }
 
-/* Hide fullscreen button on Mozilla Firefox */
-video::-moz-fullscreen-button {
-  display: none !important;
-}
+  /* Hide fullscreen button on Mozilla Firefox */
+  video::-moz-fullscreen-button {
+    display: none !important;
+  }
 
-/* Hide fullscreen button on all browsers */
-video::cue {
-  display: none !important;
+  /* Hide fullscreen button on Microsoft Edge (Chromium) */
+  video::-ms-fullscreen {
+    display: none !important;
+  }
 }
