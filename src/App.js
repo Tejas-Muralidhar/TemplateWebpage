@@ -12,6 +12,7 @@ import ImpactStories from "./components/ImpactStories";
 import AllExperiences from "./pages/AllExperiences";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Video from "../src/components/Video";
 
 // Scroll to section after navigating
 const ScrollToSection = () => {
@@ -48,6 +49,7 @@ function App() {
                 <ImpactStories />
                 <Gallery />
                 <ExperiencesCarousel />
+                <Video/>
                 <ContactForm />
               </>
             }
