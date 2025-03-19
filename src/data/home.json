@@ -3,15 +3,6 @@
         "image": "/assets/Home/image1.jpg"
     },
     {
-        "image": "/assets/Home/image2.png"
-    },
-    {
-        "image": "/assets/Home/image3.JPG"
-    },
-    {
-        "image": "/assets/Home/image4.jpg"
-    },
-    {
-        "image": "/assets/Home/img4.jpg"
+        "image": "These are pictures for the main carousel in home! Place pics in assets/Home"
     }
 ]

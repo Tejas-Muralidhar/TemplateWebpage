@@ -1,8 +1,9 @@
 {
-    "Leader Contact Number": "+91 7019345052",
-    "Center Name":"Lakshya",
-    "Leader or Center Email": "lakshyalearningcenter.uandi@gmail.com",
-    "EmailJS Service ID": "service_i2ewous",
-    "EmailJS Template ID": "template_3yyfsn8",
-    "EmailJS Public Key": "-CYk9b1eYFbZuOcEG"
+    "Leader Contact Number": "Number for footer",
+    "Center Name":"Center Name here",
+    "Leader or Center Email": "Email ID",
+    "EmailJS Service ID": "Make an EmailJS Service and paste its ID (Gmail service)",
+    "EmailJS Template ID": "Make an EmailJS Template and paste its ID (How do you want the email sent to look like?)",
+    "*IMPORTANT*":"You can delete this key-value pair. But the template in EmailJS recieves certain variables from REACT. See 'src/components/ContactForm.js' to see what params are being sent and make templates accordingly.",
+    "EmailJS Public Key": "Enter EmailJS Public key"
 }

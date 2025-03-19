@@ -1,43 +1,12 @@
 [
-    { "src": "/assets/Gallery/Orientation.jpg", "caption": "Orientation of Volunteers", "date": "Aug, 2024" },
-    { "src": "/assets/Gallery/Friendship_Day.png", "caption": "Friendship Day", "date": "Aug, 2024" },
-    { "src": "/assets/Gallery/Post_Class.jpg", "caption": "Class time!", "date": "Aug, 2024" },
-
-    { "src": "/assets/Gallery/Ganesh_Chathurthi.jpg", "caption": "Ganesh Chathurthi", "date": "Sep, 2024" },
-    { "src": "/assets/Gallery/LC_Calls_3.jpg", "caption": "LC Calls PT.1", "date": "Sep, 2024" },
-    { "src": "/assets/Gallery/Post_Class_Getaway.jpg", "caption": "Post Class Getaways PT.1", "date": "Sep, 2024" },
-    { "src": "/assets/Gallery/Post_Class_Getaway_2.jpg", "caption": "Post Class Getaways PT.2", "date": "Sep, 2024" },
-    
-    { "src": "/assets/Gallery/Cubbon_Hunt.jpg", "caption": "Cubbon Hunt", "date": "Oct, 2024" },
-    { "src": "/assets/Gallery/Diwali.jpg", "caption": "Diwali", "date": "Oct, 2024" },
-    { "src": "/assets/Gallery/Halloween.jpg", "caption": "Halloween", "date": "Oct, 2024" },
-    { "src": "/assets/Gallery/DiwalixHalloween.jpg", "caption": "Diwali X Halloween", "date": "Oct, 2024" },
-    
-    { "src": "/assets/Gallery/Children_s_Day_2.jpg", "caption": "Guess Who? Children's Day Edition", "date": "Nov, 2024" },
-    { "src": "/assets/Gallery/Volunteer_Collage.png", "caption": "Our Volunteers as Babies!", "date": "Nov, 2024" },
-    
-    { "src": "/assets/Gallery/Christmas.jpg", "caption": "Children's Day X Christmas", "date": "Dec, 2024" },
-    { "src": "/assets/Gallery/Christmas_Cleanup.jpg", "caption": "Christmas Cleanup", "date": "Dec, 2024" },
-    { "src": "/assets/Gallery/LC_Calls_2.jpg", "caption": "LC Calls PT.2", "date": "Dec, 2024" },
-    { "src": "/assets/Gallery/Post_Class_Getaway_3.jpg", "caption": "Post Class Getaways PT.3", "date": "Dec, 2024" },
-    { "src": "/assets/Gallery/Christmas_2.jpg", "caption": "Children's Day X Christmas PT.2", "date": "Dec, 2024" },
-
-    { "src": "/assets/Gallery/LC_Calls_4.jpg", "caption": "LC Calls PT.3", "date": "Jan, 2025" },
-    { "src": "/assets/Gallery/We_Are_Lakshya.jpg", "caption": "We Are Lakshya :)", "date": "Jan, 2025" },
-
-    { "src": "/assets/Gallery/Buy_For_A_Cause_crf.jpg", "caption": "Fundraising with Food", "date": "Jan, 2025" },
-    { "src": "/assets/Gallery/Gandhi_Bazaar_crf2.jpg", "caption": "Gandhi Baazar Crowdfunding", "date": "Jan, 2025" },
-    { "src": "/assets/Gallery/4th_Block_crf.jpg", "caption": "4th Block Crowdfunding", "date": "Jan, 2025" },
-    { "src": "/assets/Gallery/Phooling_Around_crf.jpg", "caption": "Phooling Around Crowdfunding", "date": "Feb, 2025" },
-    { "src": "/assets/Gallery/Malleshwaram_crf.jpg", "caption": "Malleshwaram Crowdfunding", "date": "Feb, 2025" },
-    { "src": "/assets/Gallery/Gandhi_Bazaar_crf.jpg", "caption": "Gandhi Baazar Crowdfunding PT.2", "date": "Feb, 2025" },
-    { "src": "/assets/Gallery/Church_Street_crf.jpg", "caption": "Church Street Crowdfunding", "date": "Feb, 2025" },
-    { "src": "/assets/Gallery/BDA_Complex_crf.jpg", "caption": "BDA Complex Crowdfunding", "date": "Feb, 2025" },
-    { "src": "/assets/Gallery/RR_Nagar_crf.jpg", "caption": "RR Nagar Crowdfunding", "date": "Feb, 2025" },
-    { "src": "/assets/Gallery/LakshyaxKanasu_Collab_crf.jpg", "caption": "Lakshya x Kanasu Crowdfunding", "date": "Feb, 2025" },
-    
-    { "src": "/assets/Gallery/Science_Fair.png", "caption": "Science Fair", "date": "Feb, 2025" },
-    { "src": "/assets/Gallery/LC_Calls.jpg", "caption": "LC Calls PT.4", "date": "Feb, 2025" },
-    
-    { "src": "/assets/Gallery/EOY.jpg", "caption": "End of Year", "date": "Mar, 2025" }
-  ]
+  {
+    "src": "/assets/Gallery/Diwali.jpg",
+    "caption": "Diwali",
+    "date": "Oct, 2024"
+  },
+  {
+    "src": "filepath goes here. Place your image files in assets/gallery",
+    "caption": "caption!",
+    "date": "Date"
+  }
+]
